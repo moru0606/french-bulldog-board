@@ -3,5 +3,6 @@
     <p><%= post.title %></p>
     <%= image_tag post.image.url, size: "150x150" if post.image? %>
     <%= post.content %>
+    <%= link_to '詳細', post, class: 'btn btn-outline-dark' %>
     <%= link_to '削除',post_path(post.id), class: 'btn btn-outline-danger', method: :delete, data: { confirm: '  本当に削除してよろしいですか？'} %>
   <% end %>

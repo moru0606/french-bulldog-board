@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = params[:category_id].present? ? Category.find(params[:category_id]).posts.order('id DESC') : Post.order('id DESC')
+    @pagy, @posts = pagy(params[:category_id].present? ? Category.find(params[:category_id]).posts.order('id DESC') : Post.order('id DESC'))
   end
 
   def show

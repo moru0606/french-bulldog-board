@@ -4,6 +4,7 @@
     <title>Myapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= favicon_link_tag('favicon.png') %>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +16,7 @@
     <div class="container">
       <%= render 'layouts/flash_messages' %>
       <%= yield %>
+      <%= render 'layouts/footer' %>
     </div>
   </body>
 </html>

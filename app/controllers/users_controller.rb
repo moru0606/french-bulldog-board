@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_target_user, only: %i[show edit update likes]
+  
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
@@ -32,9 +34,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def likes
+    @posts = @user.posts
+    @like_posts = @user.like_posts
+  end
+
   private
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :image, :profile)
   end 
+
+  def set_target_user
+    @user = User.find(params[:id])
+  end
 end

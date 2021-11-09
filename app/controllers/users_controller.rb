@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_target_user, only: %i[show edit update likes]
-  
+  before_action :correct_user_page, only: %i[edit likes]
+  before_action :require_user_logged_in?, only: %i[show edit update likes]
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
@@ -47,5 +49,10 @@ class UsersController < ApplicationController
 
   def set_target_user
     @user = User.find(params[:id])
+  end
+
+  def correct_user_page
+    @user = User.find(params[:id])
+    redirect_to(root_url) unless @user == current_user
   end
 end

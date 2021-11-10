@@ -26,8 +26,33 @@ h6 {
   font-family: "Comic Sans MS";
 }
 
-body, html { font-size: 14px; }
+body, html { font-size: 10px; }
 @media screen and (min-width: 576px) and (max-width: 768px) { body, html { font-size: 22px; } }
 @media screen and (min-width: 769px) and (max-width: 992px) { body, html { font-size: 18px; } }
 @media screen and (min-width: 993px) and (max-width: 1200px) { body, html { font-size: 16px; } }
-@media screen and (min-width: 1201px) { body, html { font-size: 16px; } }
+@media screen and (min-width: 1201px) { body, html { font-size: 16px; }
+}
+
+.boards__searchForm {
+  display: inline-block;
+}
+
+.boards__select {
+  display: inline-block;
+  width: auto;
+}
+.boards__linkBox {
+  a {
+    margin: 0 8px
+  }
+}
+.top__items {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+
+body {
+  font-family: sans-serif;
+  background-color: rgb(250, 250, 250);
+}

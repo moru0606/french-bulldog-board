@@ -2,23 +2,23 @@
     <div class="comment_group_item ">
         <div class="top_item">
             <% if comment.user.image? %>                                                              
-                <%= image_tag comment.user.image.url, class: "rounded-circle", size: "80x80" %>
+                <%= image_tag comment.user.image.url, class: "rounded-circle", size: "70x70" %>
                 <!--##画像が設定されてない場合-->
             <% else %>
-                <%= image_tag "default.png", size: "80x80" %>
+                <%= image_tag "default.jpg", class: "rounded-circle", size: "70x70" %>
             <% end %>
         </div>
     <div class="comment_box">
         <div class="item_left">
-        <p><%= comment.user.name %> : <%= comment.created_at.to_s(:datetime_jp) %></p>
-            <h5><%= simple_format(comment.comment) %></h5>
+        <p><b><%= link_to comment.user.name, comment.user, class: "link" %></b> : <%= comment.created_at.to_s(:datetime_jp) %></p>
+            <p><%= simple_format(comment.comment) %></p>
         </div>
         <div class="item_rigth">
             <% if logged_in? && current_user.id == comment.user_id %>
                 
-                <%= link_to '削除', [comment.post, comment],class: 'btn btn-outline-danger btn-sm',
+                <span><%= link_to '削除', [comment.post, comment],class: 'btn btn-outline-danger btn-sm',
                         method: :delete,
-                        data: { confirm: "本当に削除してもよろしいですか？" } %>
+                        data: { confirm: "本当に削除してもよろしいですか？" } %></span>
             <% end %>
         </div>
     </div>

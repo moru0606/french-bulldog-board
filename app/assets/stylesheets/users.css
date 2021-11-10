@@ -1,8 +1,4 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.image_input_btn{
+.image_input_btn {
   display: block;
   background-color: gray;
   width: 180px;
@@ -16,7 +12,7 @@
   text-align: center;
 }
 
-.image_form{
+.image_form {
   display: none;
 }
 
@@ -26,5 +22,5 @@
 }
 
 h5 {
-  padding-top:20px;
+  padding-top: 20px;
 }

@@ -1,85 +1,75 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.post_bottom_box{
+.post_bottom_box {
   display: flex;
   justify-content: space-between;
-  }
-  
-  .raw_left{
+}
+
+.raw_left {
   display: flex;
   margin-left: 15px;
   gap: 14px;
-  }
-  
-  .raw_right{
+}
+
+.raw_right {
   display: flex;
   align-self: flex-start;
-  }
-  
-  .like-btn{
+}
+
+.like-btn {
   font-size: 18px;
   color: #8899a6;
-  }
-  
-  .unlike-btn{
+}
+
+.unlike-btn {
   font-size: 18px;
   color: #e54747;
-  }
-  
-  .fa-comment-dots{
-  color:gray;
-  }
-  
-  a{
+}
+
+.fa-comment-dots {
+  color: gray;
+}
+
+a {
   text-decoration: none;
-  }
-  
-  .comment_group_item{
-  display:flex
-  }
-  
-  .comment_box{
+}
+
+.comment_group_item {
+  display: flex;
+}
+
+.comment_box {
   display: flex;
   padding-left: 10px;
-  }
-  
-  .item_rigth{
-  white-space: nowrap
-  }
+}
 
-  @media (max-width: 768px) 
-{
+.item_rigth {
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
   h1 {
     font-size: 30px;
   }
   .tab__invisible {
     display: none;
   }
-
   .tab__size {
     font-size: 30px;
   }
-
-  .like-btn{
+  .like-btn {
     font-size: 10px;
     color: #8899a6;
-    }
-    
-    .unlike-btn{
+  }
+  .unlike-btn {
     font-size: 10px;
     color: #e54747;
-    }
-    .fa-comment-dots{
-      font-size: 12px;
-      color:gray;
-      }
-      
+  }
+  .fa-comment-dots {
+    font-size: 12px;
+    color: gray;
+  }
 }
 
-@media (max-width: 479px)
-{
+@media (max-width: 479px) {
   h1 {
     font-size: 18px;
   }
@@ -91,30 +81,18 @@
   }
   .pagination {
     font-size: 15px;
-    a {
-      padding: 5px;
-    }
   }
-  // .like-btn{
-  //   font-size: 10px;
-  //   color: #8899a6;
-  //   }
-    
-  //   .unlike-btn{
-  //   font-size: 8px;
-  //   color: #e54747;
-  //   }
-  //   .fa-comment-dots{
-  //     font-size: 8px;
-  //     color:gray;
-  //     }
+  .pagination a {
+    padding: 5px;
+  }
 }
+
 .link {
   text-decoration: none;
   color: black;
 }
 
-.image_input_btn{
+.image_input_btn {
   display: block;
   background-color: gray;
   width: 180px;
@@ -128,9 +106,10 @@
   text-align: center;
 }
 
-.image_form{
+.image_form {
   display: none;
 }
+
 .form-input {
   padding-bottom: 20px;
 }

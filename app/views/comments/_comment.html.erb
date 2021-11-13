@@ -10,7 +10,7 @@
         </div>
     <div class="comment_box">
         <div class="item_left">
-        <p><b><%= link_to comment.user.name, comment.user, class: "link" %></b> : <%= comment.created_at.to_s(:datetime_jp) %></p>
+        <p><b><%= link_to comment.user.name, comment.user, class: "link_name" %></b> : <%= comment.created_at.to_s(:datetime_jp) %></p>
             <p><%= simple_format(comment.comment) %></p>
         </div>
         <div class="item_rigth">

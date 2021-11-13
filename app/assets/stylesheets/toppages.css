@@ -1,0 +1,39 @@
+.main h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.main {
+  padding-top: 10px;
+  padding-bottom: 20px;
+  background-color: #CCC;
+}
+
+#home {
+  background-color: #777773;
+  color: #f0e9e9;
+}
+
+.home__more {
+  float: right;
+}
+
+.home__moreWrap {
+  height: 20px;
+}
+
+.thead__like {
+  background-color: #df9999;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link_name {
+  color: gray;
+  text-decoration: none;
+}

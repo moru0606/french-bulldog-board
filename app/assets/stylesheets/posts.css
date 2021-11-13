@@ -15,16 +15,17 @@
 }
 
 .like-btn {
-  font-size: 18px;
+  font-size: 16px;
   color: #8899a6;
 }
 
 .unlike-btn {
-  font-size: 18px;
+  font-size: 16px;
   color: #e54747;
 }
 
 .fa-comment-dots {
+  font-size: 16px;
   color: gray;
 }
 
@@ -55,17 +56,9 @@ a {
   .tab__size {
     font-size: 30px;
   }
-  .like-btn {
-    font-size: 10px;
-    color: #8899a6;
-  }
-  .unlike-btn {
-    font-size: 10px;
-    color: #e54747;
-  }
-  .fa-comment-dots {
-    font-size: 12px;
-    color: gray;
+  .img-responsive {
+    width: 280px;
+    length: 200px;
   }
 }
 
@@ -79,10 +72,7 @@ a {
   .phone__size {
     font-size: 15px;
   }
-  .pagination {
-    font-size: 15px;
-  }
-  .pagination a {
+  a {
     padding: 5px;
   }
 }
@@ -90,6 +80,11 @@ a {
 .link {
   text-decoration: none;
   color: black;
+}
+
+.link_name {
+  color: gray;
+  text-decoration: none;
 }
 
 .image_input_btn {
@@ -112,4 +107,35 @@ a {
 
 .form-input {
   padding-bottom: 20px;
+}
+
+.posts__table {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.posts__table tr:hover {
+  cursor: pointer;
+}
+
+.thead {
+  background-color: #a5a5a2;
+}
+
+.posts__searchForm {
+  display: inline-block;
+}
+
+.posts__select {
+  display: inline-block;
+  width: auto;
+}
+
+.post__indexNew {
+  position: relative;
+  bottom: 2px;
+}
+
+.likes-items {
+  float: right;
 }

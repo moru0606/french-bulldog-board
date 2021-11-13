@@ -1,20 +1,10 @@
-<div class="top__items">
-  <div class="ml-auto posts__linkBox">
-    <%= form_with url: posts_path, method: :get, class: 'posts__searchForm' do %>
-      <%= select_tag :category_id,
-                      options_from_collection_for_select(Category.all, :id, :name, params[:category_id]),
-                      {
-                        prompt: 'カテゴリーから探す',
-                        class: 'form-control posts_select',
-                        onchange: 'submit(this.form);'
-                      } %>
-    <% end %>
+
   <table class="table table-hover posts__table">
     <thead class="thead">
       <tr>
         <th></th>
         <th>タイトル</th>
-        <th>作成者</th>
+        <th>投稿者</th>
         <th>投稿日時</th>
         <th></th>
         <th></th>
@@ -26,20 +16,18 @@
         <tr>
           <th>
             <% if post.user.image? %>                                                              
-                  <%= image_tag post.user.image.url, class: "rounded-circle", size: "50x50" %>
-                  <!--##画像が設定されてない場合-->
-              <% else %>
-                  <%= image_tag "default.jpg",class: "rounded-circle", size: "60x60" %>
-              <% end %>
+              <%= image_tag post.user.image.url, class: "rounded-circle", size: "50x50" %>
+            <% else %>
+              <%= image_tag "default.jpg",class: "rounded-circle", size: "50x50" %>
+            <% end %>
           </th>
-          <td class="phone__size"><span><%= link_to post.title, post, class: "link" %></span>
-          
+          <td class="phone__size">
+            <span><%= link_to post.title.truncate(25), post, class: "link" %></span>
           </td>
-          <td class="phone__size"><%= link_to post.user.name, post.user, class: "link" %></td>
-          <td><span class="text-muted"><%= post.created_at.to_s(:ymd)%></span></td>
-          
+          <td class="phone__size"><%= link_to post.user.name.truncate(6), post.user, class: "link_name" %></td>
+          <td><span class="phone__size"><%= post.created_at.to_s(:ymd)%></span></td>
           <td class="phone__size"><%= render 'likes/like', post: post %></td>
-          <td class="comment_count"><i class="far fa-comment-dots"></i> <%= post.comments.count %></td>
+          <td class="phone__size"><i class="far fa-comment-dots"></i><%= post.comments.count %></td>
         </tr>
       <% end %>
     </tbody>

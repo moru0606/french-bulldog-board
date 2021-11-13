@@ -2,7 +2,7 @@ class LikesController < ApplicationController
   def create
     like = current_user.likes.build(post_id: params[:post_id])
     like.save
-    flash[:success] = 'お気に入りを登録しました'
+    flash[:success] = 'お気に入り登録しました'
     redirect_back(fallback_location: root_path)
   end
 

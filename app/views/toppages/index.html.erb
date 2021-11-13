@@ -1,14 +1,42 @@
-
 <% if logged_in? %>
-  <% if !@posts.empty? %>
-  <div class="top__items">
-    <%= render 'layouts/posts_list', posts: @posts %>
-    
+  <h2><span id="home">Home</span></h2>
+<div class="top__items">
+<h4>新着掲示板</h4>
+  <%= render 'layouts/posts_list', posts: @posts %>
+  <div class="home__moreWrap">
+    <%= link_to 'もっと見る', posts_path, class: "home__more" %>
   </div>
-  <%else%>
-  <p>まだ投稿がありません</p>
-  <%= link_to '早速投稿しよう', new_post_path, class: 'btn btn-primary' %>
-  <%end%>
+  <h4>人気ランキング</h4>
+<table class="table table-hover post__table">
+  <thead class="thead__like">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">タイトル</th>
+      <th scope="col">投稿者</th>
+      <th scope="col">作成日時</th>
+      <th scope="col">いいね</th>
+      <th></th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    <% @post_like_ranks.each.with_index(1) do |post, i| %>
+      <tr>
+        <td class="phone__size"><% if post.user.image? %>                                                              
+              <%= image_tag post.user.image.url, class: "rounded-circle", size: "50x50" %>
+            <% else %>
+              <%= image_tag "default.jpg",class: "rounded-circle", size: "50x50" %>
+            <% end %></td>
+        <td class="phone__size"><%= link_to post.title.truncate(25), post, class: 'link' %></td>
+        <td class="phone__size"><%= link_to post.user.name.truncate(6), post.user, class: 'link_name' %></td>
+        <td class="phone__size"><%= post.created_at.to_s(:ymd) %></td>
+        <td class="phone__size"><%= render 'likes/like', post: post %></td>
+        <td class="phone__size"><i class="far fa-comment-dots"></i><%= post.comments.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
 <% else %>
   <div class="main">
     <h1 class="masthead-heading text-uppercase mb-0">French Bulldog Posts</h1>
@@ -20,5 +48,6 @@
       <%= link_to '今すぐ登録！', signup_path, class: 'btn btn-lg btn-primary' %>
       </div>
     </div>
-<% end %>
   </div>
+<% end %>
+  

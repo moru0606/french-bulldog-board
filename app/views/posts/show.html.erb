@@ -1,11 +1,12 @@
 <div class="top__items">
-  <h1 class="text-center">投稿詳細ページ</h1>
+  
   <h4><b><%= @post.title %></b></h4>
     <Hr>
-    <p><%= image_tag @post.image.url if @post.image? %></p>
-    <p><b><%= link_to @post.user.name, @post.user, class: "link" %></b> : <%= @post.created_at.to_s(:datetime_jp) %></p>
-    <h6><%= simple_format(@post.content) %></h6>
-    <p class="comment_count"><i class="far fa-comment-dots"></i> <%= @post.comments.length %>件のコメント数</p>
+    <p><%= image_tag(@post.image.url, class: "img-responsive") if @post.image? %></p>
+    <p><b><%= link_to @post.user.name, @post.user, class: "link_name" %></b> : <%= @post.created_at.to_s(:datetime_jp) %></p>
+    <p><%= simple_format(@post.content) %></p>
+    <p class="likes-items">いいね<i class="fas fa-heart unlike-btn" ></i> <%= @post.likes.count %> コメント<i class="far fa-comment-dots"></i> <%= @post.comments.length %></p>
+    <p class="comment_count">
     <%= link_to '投稿一覧', posts_path, class: 'btn btn-outline-secondary' %>
   <div class="comment_list">
     <Hr>

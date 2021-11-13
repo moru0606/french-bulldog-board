@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @pagy,@posts = pagy(@user.posts.order(created_at: :desc), items: 10)
   end
 
   def new
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
 
   def likes
     @posts = @user.posts
-    @like_posts = @user.like_posts
+    @pagy,@like_posts = pagy(@user.like_posts.order(created_at: :desc), items: 10)
   end
 
   private

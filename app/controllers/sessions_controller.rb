@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
     email = params[:session][:email].downcase
     password = params[:session][:password]
     if login(email, password)
-      flash[:success] = 'ログインしました。'
-      redirect_to @user
+      flash[:success] = 'ログインしました'
+      redirect_to root_path
     else
       flash[:danger] = 'メールアドレスまたはパスワードが正しくありません'
       redirect_back fallback_location: login_path

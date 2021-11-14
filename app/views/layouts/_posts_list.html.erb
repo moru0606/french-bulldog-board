@@ -15,7 +15,7 @@
       <tr>
         <th>
           <% if post.user.image? %>                                                              
-            <%= image_tag post.user.image.url, class: "rounded-circle", size: "50x50" %>
+            <%= image_tag post.user.image.url(:thumb1), class: "rounded-circle" %>
           <% else %>
             <%= image_tag "default.jpg",class: "rounded-circle", size: "50x50" %>
           <% end %>

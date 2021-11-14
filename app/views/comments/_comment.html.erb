@@ -2,7 +2,7 @@
     <div class="comment_group_item ">
         <div class="top_item">
             <% if comment.user.image? %>
-            <%= image_tag comment.user.image.url, class: "rounded-circle", size: "70x70" %>
+            <%= image_tag comment.user.image.url(:thumb2), class: "rounded-circle" %>
             <% else %>
             <%= image_tag "default.jpg", class: "rounded-circle", size: "70x70" %>
             <% end %>

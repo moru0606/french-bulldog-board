@@ -5,9 +5,9 @@
     </div>
     <div class="card-body">
       <% if @user.image? %>
-        <%= image_tag @user.image.url, class: "trim-image-to-circl" %>
+        <%= image_tag @user.image.url(:thumb), class: "rounded-circle" %>
       <% else %>
-        <%= image_tag "default.jpg",class: "rounded-circle", size: "150x150" %>
+        <%= image_tag "default.jpg", class: "rounded-circle", size: "150x150" %>
       <% end %>
       <h5 class="card-title">プロフィール</h5>
       <% if @user.profile.present? %>
@@ -28,10 +28,14 @@
         <hr>
           <p><%= post.created_at.to_s(:ymd)%></p>
           <p><b><%= link_to post.title, post_path(post.id), class: "link__title" %></b>: <%= post.content %></p>
-          <P>いいね<i class="fas fa-heart unlike-btn"></i> <%= post.likes.count %> コメント<i class="far fa-comment-dots"></i> <%= post.comments.count %></P>
+          <P>いいね<i class="fas fa-heart unlike-btn"></i> <%= post.likes.count %> コメント<i class="far fa-comment-dots"></i> <%= post.comments.count %>
+            <span class="delete__btn">
             <% if logged_in? && current_user.id == post.user_id %>
               <%= link_to '削除', post_path(post.id), class: "btn btn-outline-danger", method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %>
             <% end %>
+            </span>
+          </P>
+            
         <% end %>
         <% else %>
           <P>まだ投稿がありません</P>

@@ -3,6 +3,8 @@
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  font-family: monospace;
+  font-weight: bold;
 }
 
 .main {
@@ -11,9 +13,9 @@
   background-color: #CCC;
 }
 
-#home {
-  background-color: #777773;
-  color: #f0e9e9;
+.small__items h6 {
+  letter-spacing: 3px;
+  font-family: "Comic Sans MS";
 }
 
 .home__more {
@@ -28,12 +30,16 @@
   background-color: #df9999;
 }
 
-.link {
+.link__title {
   text-decoration: none;
   color: black;
 }
 
-.link_name {
-  color: gray;
+.link__name {
+  color: black;
   text-decoration: none;
+}
+
+.signup__btn {
+  padding-top: 20px;
 }

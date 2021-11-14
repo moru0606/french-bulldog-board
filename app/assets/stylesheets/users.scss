@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.image_input_btn{
+.image_input_btn {
   display: block;
   background-color: gray;
   width: 180px;
@@ -16,15 +16,25 @@
   text-align: center;
 }
 
-.image_form{
+.image_form {
   display: none;
 }
 
-.link {
+.link__title {
+  text-decoration: none;
+  color: black;
+}
+.link__name {
   text-decoration: none;
   color: black;
 }
 
-h5 {
-  padding-top:20px;
+.card-body {
+  h5 {
+    padding-top: 20px;
+  }
+}
+
+.signup__items {
+  padding-top: 20px;
 }

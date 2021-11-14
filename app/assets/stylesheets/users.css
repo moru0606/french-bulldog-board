@@ -16,11 +16,20 @@
   display: none;
 }
 
-.link {
+.link__title {
   text-decoration: none;
   color: black;
 }
 
-h5 {
+.link__name {
+  text-decoration: none;
+  color: black;
+}
+
+.card-body h5 {
+  padding-top: 20px;
+}
+
+.signup__items {
   padding-top: 20px;
 }

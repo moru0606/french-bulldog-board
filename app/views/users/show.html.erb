@@ -17,25 +17,25 @@
       <% end %>
 
       <% if logged_in? && current_user == @user %>
-        <%= link_to '編集ページ',edit_user_path(@user),class: 'btn btn-outline-success' %>
-        <%= link_to 'お気に入り' ,likes_user_path(current_user), class: 'btn btn-outline-info' %>
+        <%= link_to '編集ページ', edit_user_path(@user),class: 'btn btn-outline-success' %>
+        <%= link_to 'お気に入り' , likes_user_path(current_user), class: 'btn btn-outline-info' %>
         <%= link_to '投稿一覧', posts_path, class: 'btn btn-outline-secondary' %>
-        <% end %>
+      <% end %>
         <hr>
       <p>投稿履歴</p>
-      <% if !@posts.empty? %>
-      <% @posts.each do |post| %>
-      <hr>
-        <p><%= post.created_at.to_s(:ymd)%></p>
-        <p><b><%= link_to post.title, post_path(post.id), class: "link" %></b>: <%= post.content %></p>
-        <P>いいね<%= post.likes.count %> コメント数<%= post.comments.count %></P>
-        <% if logged_in? && current_user.id == post.user_id %>
-          <%= link_to '削除', post_path(post.id), class: "btn btn-outline-danger", method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %>
+        <% if !@posts.empty? %>
+        <% @posts.each do |post| %>
+        <hr>
+          <p><%= post.created_at.to_s(:ymd)%></p>
+          <p><b><%= link_to post.title, post_path(post.id), class: "link__title" %></b>: <%= post.content %></p>
+          <P>いいね<i class="fas fa-heart unlike-btn"></i> <%= post.likes.count %> コメント<i class="far fa-comment-dots"></i> <%= post.comments.count %></P>
+            <% if logged_in? && current_user.id == post.user_id %>
+              <%= link_to '削除', post_path(post.id), class: "btn btn-outline-danger", method: :delete, data: { confirm: '本当に削除してもよろしいですか?' } %>
+            <% end %>
         <% end %>
-      <% end %>
-      <% else %>
-        <P>まだ投稿がありません</P>
-      <% end %>
+        <% else %>
+          <P>まだ投稿がありません</P>
+        <% end %>
     </div>
   </div>
 </div>

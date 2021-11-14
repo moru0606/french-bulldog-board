@@ -1,34 +1,33 @@
-
-  <table class="table table-hover posts__table">
-    <thead class="thead">
+<table class="table table-hover posts__table">
+  <thead class="thead">
+    <tr>
+      <th></th>
+      <th>タイトル</th>
+      <th>投稿者</th>
+      <th>投稿日時</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
       <tr>
-        <th></th>
-        <th>タイトル</th>
-        <th>投稿者</th>
-        <th>投稿日時</th>
-        <th></th>
-        <th></th>
-        <th></th>
+        <th>
+          <% if post.user.image? %>                                                              
+            <%= image_tag post.user.image.url, class: "rounded-circle", size: "50x50" %>
+          <% else %>
+            <%= image_tag "default.jpg",class: "rounded-circle", size: "50x50" %>
+          <% end %>
+        </th>
+        <td class="phone__size">
+          <span><%= link_to post.title.truncate(25), post, class: "link__title" %></span>
+        </td>
+        <td class="phone__size"><%= link_to post.user.name.truncate(6), post.user, class: "link__name" %></td>
+        <td><span class="phone__size"><%= post.created_at.to_s(:ymd)%></span></td>
+        <td class="phone__size"><%= render 'likes/like', post: post %></td>
+        <td class="phone__size"><i class="far fa-comment-dots"></i><%= post.comments.count %></td>
       </tr>
-    </thead>
-    <tbody>
-      <% @posts.each do |post| %>
-        <tr>
-          <th>
-            <% if post.user.image? %>                                                              
-              <%= image_tag post.user.image.url, class: "rounded-circle", size: "50x50" %>
-            <% else %>
-              <%= image_tag "default.jpg",class: "rounded-circle", size: "50x50" %>
-            <% end %>
-          </th>
-          <td class="phone__size">
-            <span><%= link_to post.title.truncate(25), post, class: "link" %></span>
-          </td>
-          <td class="phone__size"><%= link_to post.user.name.truncate(6), post.user, class: "link_name" %></td>
-          <td><span class="phone__size"><%= post.created_at.to_s(:ymd)%></span></td>
-          <td class="phone__size"><%= render 'likes/like', post: post %></td>
-          <td class="phone__size"><i class="far fa-comment-dots"></i><%= post.comments.count %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+    <% end %>
+  </tbody>
+</table>

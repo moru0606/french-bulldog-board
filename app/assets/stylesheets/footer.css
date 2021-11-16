@@ -2,7 +2,8 @@ footer {
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
-  > p {
-    text-align: center;
-  }
+}
+
+footer > p {
+  text-align: center;
 }
